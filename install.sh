@@ -57,7 +57,7 @@ bbr="Openvz/Lxc"
 fi
 
 if [ ! -f xuiyg_update ]; then
-green "首次安装x-ui-yg脚本必要的依赖……"
+green "首次安装x-ui脚本必要的依赖……"
 if [[ x"${release}" == x"alpine" ]]; then
 apk update
 apk add wget curl tar jq tzdata openssl expect git socat iproute2 coreutils util-linux dcron
@@ -305,7 +305,7 @@ sleep 2
 xuigo
 cronxui
 echo "----------------------------------------------------------------------"
-blue "x-ui-yg $(cat /usr/local/x-ui/v 2>/dev/null) 安装成功，自动进入 x-ui 显示管理菜单" && sleep 4
+blue "x-ui $(cat /usr/local/x-ui/v 2>/dev/null) 安装成功，自动进入 x-ui 显示管理菜单" && sleep 4
 echo
 show_menu
 }
@@ -2506,15 +2506,15 @@ insV=$(cat /usr/local/x-ui/v 2>/dev/null)
 latestV=$(curl -sL https://raw.githubusercontent.com/leostarx9999/x-ui-yg/main/version | awk -F "更新内容" '{print $1}' | head -n 1)
 if [[ -f /usr/local/x-ui/v ]]; then
 if [ "$insV" = "$latestV" ]; then
-echo -e "当前 x-ui-yg 脚本最新版：${bblue}${insV}${plain} (已安装)"
+echo -e "当前 x-ui 脚本最新版：${bblue}${insV}${plain} (已安装)"
 else
-echo -e "当前 x-ui-yg 脚本版本号：${bblue}${insV}${plain}"
-echo -e "检测到最新 x-ui-yg 脚本版本号：${yellow}${latestV}${plain} (可选择6进行更新)"
+echo -e "当前 x-ui 脚本版本号：${bblue}${insV}${plain}"
+echo -e "检测到最新 x-ui 脚本版本号：${yellow}${latestV}${plain} (可选择6进行更新)"
 echo -e "${yellow}$(curl -sL https://raw.githubusercontent.com/leostarx9999/x-ui-yg/main/version)${plain}"
 fi
 else
-echo -e "当前 x-ui-yg 脚本版本号：${bblue}${latestV}${plain}"
-echo -e "请先选择 1 ，安装 x-ui-yg 脚本"
+echo -e "当前 x-ui 脚本版本号：${bblue}${latestV}${plain}"
+echo -e "请先选择 1 ，安装 x-ui 脚本"
 fi
 red "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" 
 echo -e "VPS状态如下："
